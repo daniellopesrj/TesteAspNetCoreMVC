@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default"> <!--navbar-fixed-top-->
+
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Lá no Rio</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sou viajante</a></li>
+                <li><a href="#">Sou proprietário</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><button class="btn btn-primary navbar-btn">Login</button></li>
+            </ul>
+            
+        </div>
+
+    </nav>
+
+
+
+
+    <div class="container-fluid">
+
+
+
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p>
+                &copy; 2017 - TesteASPNETCore - Teste
+
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
