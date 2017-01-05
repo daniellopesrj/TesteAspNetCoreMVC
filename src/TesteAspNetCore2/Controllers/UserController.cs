@@ -25,9 +25,12 @@ namespace TesteAspNetCore2.Controllers
         }
         // GET /<controller>/Save
         [HttpPost]
-        public String Save()
+        public String Save(String login, String password)
         {
-            return "OK";
+            if (!string.IsNullOrEmpty(login))
+                return login;
+            else
+                return "Vazio";
 
         }
     }

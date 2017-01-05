@@ -1,26 +1,69 @@
-﻿@{
+﻿@using System.Collections.Generic
+@using Microsoft.AspNetCore.Http
+@{
     ViewData["Title"] = "ERP";
 }
 
 
+<script>
+
+    function ValidatePassword()
+    {
+
+        var password = document.getElementsByName("password");
+        var repeatpassord = document.getElementsByName("repeatpassord");
+
+        if (password.toString() == repeatpassord.toString()) {
+            UserForm.submit();
+
+        }
+        else {
+            alert("Entrou aqui 3");
+            document.getElementById('ErrorSummary').innerHTML = "Senha errada caralho!!!"
+        }
+        
+    }
+
+
+
+</script>
 
 <div class="container">
 
-
     <div class="container-fluid">
 
-        <form>
+
+
+
+        
+        <form action="Save" name="UserForm" method="post" class="form-horizontal">
+
             <fieldset>
-                <h1>Usuários</h1>
 
-                <label>Login</label>
-                <input type="text" maxlength="20" placeholder="Digite seu login." />
-                <label>Senha</label>
-                <input type="password" maxlength="10" placeholder="Digite sua senha." />
-                <label>Repita Senha</label>
-                <input type="password" maxlength="10" placeholder="Digite sua senha novamente." />
+                <legend>Novo usuário</legend>
 
-                <button type="submit">Salvar</button>
+                <div class="control-group">
+                    <label for="login" class="control-label">Login</label>
+                    <div>
+                        <input name="login" class="controls" type="text" maxlength="20" placeholder="Login." />
+                    </div>
+                    
+                    <label for="password" class="control-label">Senha</label>
+                    <div>
+                        <input name="password" class="controls" type="password" maxlength="10" placeholder="Senha." />
+                    </div>
+                    <label for="repeatpassord"  class="control-label">Repita Senha</label>
+                    <div>
+                        <input name="repeatpassord" class="controls" type="password" maxlength="10" placeholder="Senha novamente." />
+                    </div>
+                </div>
+
+
+
+                <br>
+                <div class="control-group">
+                    <button class="btn btn-primary controls" type="button" onclick="ValidatePassword()">Salvar</button>
+                </div>
 
             </fieldset>
 
