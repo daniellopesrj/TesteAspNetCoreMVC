@@ -15,5 +15,20 @@ namespace TesteAspNetCore2.Controllers
         {
             return View();
         }
+
+        // GET /<controller>/UserAddOrUpdate
+        public IActionResult UserAddOrUpdate()
+        {
+
+            return View();
+
+        }
+        // GET /<controller>/Save
+        [HttpPost]
+        public String Save()
+        {
+            return "OK";
+
+        }
     }
 }
