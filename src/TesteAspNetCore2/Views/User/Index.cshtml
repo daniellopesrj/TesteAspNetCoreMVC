@@ -1,4 +1,5 @@
-﻿@{
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     ViewData["Title"] = "ERP";
 }
 
@@ -19,9 +20,9 @@
     <div>
         <hr />
 
-        <button class="btn btn-primary" onclick="window.open('User/UserAddOrUpdate');">Incluir usuário</button> 
-        <button class="btn btn-primary" onclick="history.back();"> Voltar</button>
+        <button class="btn btn-primary" onclick="window.open('../User/UserAddOrUpdate', '_self');">Incluir usuário</button> 
 
+        <button class="btn btn-primary" onclick="window.open('../Home', '_self');"> Voltar</button>
     </div>
 
 </div>
