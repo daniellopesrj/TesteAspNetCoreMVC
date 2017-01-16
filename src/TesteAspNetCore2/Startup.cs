@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+//using EFGetStarted.AspNetCore.ExistingDb.Models;
+using Microsoft.EntityFrameworkCore;
+using TesteAspNetCore2.Models;
 
 namespace TesteAspNetCore2
 {
@@ -17,6 +20,10 @@ namespace TesteAspNetCore2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var connection = @"Server=ULTRABOOKDANIEL\SQLEXPRESS;Database=LocalDB;User Id=desenv;Password=desenv1234;Trusted_Connection=True;";
+            services.AddDbContext<LocalDBContext>(options => options.UseSqlServer(connection));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

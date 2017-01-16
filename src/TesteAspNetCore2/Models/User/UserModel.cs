@@ -30,24 +30,23 @@ namespace TesteAspNetCore2.Models.User
         [DataType(DataType.DateTime)]
         public DateTime CreatedDateTime { get; set; }
 
-        /*
-        [Required]
+        [Required(ErrorMessage = "O campo nome é obrigatório.")]
         [Display(Name ="Nome")]
         [MaxLength(100)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo e-mail é obrigatório.")]
         [Display(Name = "E-mail")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
+        /*
         [Display(Name = "Endereço")]
         [MaxLength(100)]
         public string Address { get; set; }
-
-        [DataType(DataType.DateTime)]
-        public DateTime BirthDate { get; set; }
         */
+        [DataType(DataType.DateTime)]
+        public DateTime BirthDate { get { return DateTime.Now; } }
+        
 
     }
 }
